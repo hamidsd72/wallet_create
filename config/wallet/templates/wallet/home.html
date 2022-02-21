@@ -1,0 +1,30 @@
+<div style="text-align: center">
+    <h1>walletName : {{name}}</h1>
+    
+    {% if name == "monero" %}
+        <p>privateSpendKey :   {{privateSpendKey}}</p>
+        <p>privateViewKey :    {{privateViewKey}}</p>
+        <p>publicSpendKey :    {{publicSpendKey}}</p>
+        <p>publicViewKey :     {{publicViewKey}}</p>
+        <p>primaryAddress :    {{primaryAddress}}</p>
+        <p>integratedAddress : {{integratedAddress}}</p>
+        <p style="background-color:black;color: white;padding: 1%">subaddress : {{subaddress}}</p>
+    {% else %}
+        <p>address :      {{address}}</p>
+        <p>private_key :  {{private_key}}</p>
+        <p>public_key :   {{public_key}}</p>
+        <div style="background-color:black;color: white;padding: 1%">
+            <p>childrenAddr : {{childrenAddr}}</p>
+            <p>childrenPubK : {{childrenPubK}}</p>
+        </div>
+        <div style="margin-top: 1%">
+            <a href="{% url 'wallet:home' %}" style="text-decoration: none;color: white;background-color: black;border: 1px solid white;margin-right: 1%;padding: .5% 2%;border-radius: 7.5px;">change to monero</a>
+        </div>
+    {% endif %}
+
+    <div style="margin-top: 2%"> 
+        <a href="{% url 'wallet:setWallet' "BTC" %}" style="text-decoration: none;color: white;background-color: DodgerBlue;border: 1px solid DeepSkyBlue;margin-right: 1%;padding: .5% 2%;border-radius: 7.5px;">change to btc</a>
+        <a href="{% url 'wallet:setWallet' "ETH" %}" style="text-decoration: none;color: white;background-color: ForestGreen;border: 1px solid LightGreen;margin-left: 1%;padding: .5% 2%;border-radius: 7.5px;">change to eth</a>
+    </div>
+    
+</div>
